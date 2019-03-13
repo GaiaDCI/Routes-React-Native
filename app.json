@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "templategaia",
-    "slug": "templategaia",
+    "name": "gaia",
+    "slug": "my-new-project",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [

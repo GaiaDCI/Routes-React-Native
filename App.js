@@ -1,18 +1,23 @@
-
 import React from 'react';
 import {
+  StyleSheet,
   View,
-  Text
+  // StatusBar
 } from 'react-native';
 
-import Routes from './components/Routes';
+import Signup from './src/pages/Signup';
+import Login from './src/pages/Login';
+import Routes from './src/Routes';
 
-export default class App extends Component {
+export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>App page</Text>
+        {/* <StatusBar
+          barStyle='light-content' /> */}
         <Routes />
+        <Login />
+
       </View>
     )
   }
@@ -21,6 +26,8 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    margin: 10
+    backgroundColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 });
