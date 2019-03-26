@@ -1,33 +1,18 @@
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  // StatusBar
-} from 'react-native';
-
-import Signup from './src/pages/Signup';
-import Login from './src/pages/Login';
-import Routes from './src/Routes';
+import Router from './Router';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import rootReducer from './reducers';
+import thunk from 'redux-thunk';
 
 export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {/* <StatusBar
-          barStyle='light-content' /> */}
-        <Routes />
-        <Login />
+	render() {
+		const store = createStore(rootReducer, applyMiddleware(thunk));
 
-      </View>
-    )
-  }
+		return (
+			<Provider store={store}>
+				<Router />
+			</Provider>
+		);
+	}
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-});
